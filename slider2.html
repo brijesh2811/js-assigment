@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>click able slide</title>
+    <link rel="wedsite icon" type="png" href="./slid.png">
+    <style>
+        section {
+            width: 500px;
+            height: 500px;
+            margin: 20px auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        .nav {
+            text-align: center;
+        }
+
+        .nav button {
+            padding: 10px 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <img src="./1.jpg" class="slid_img" alt="">
+        <img src="./2.jpg" alt="" class="slid_img">
+        <img src="./3.jpg" alt="" class="slid_img">
+    </section>
+    <div class="nav">
+        <button onclick="goPrew()">Prew</button>
+        <button onclick="goNext()">Next</button>
+    </div>
+    <script>
+        const slid = document.querySelectorAll('.slid_img')
+        console.log(slid);
+        let count = 0
+
+        slid.forEach((img, index) => {
+            console.log(img, index);
+            img.style.left = `${index * 100}%`
+        })
+        function slider() {
+            slid.forEach((img) => {
+                console.log(img);
+                img.style.transform = `translateX${-count * 100}%`
+            })
+
+        }
+        goPrew = () => {
+            console.log("goprew");
+            slider()
+            count--
+        }
+        goNext = () => {
+            console.log("gonext");
+            slider()
+            count++
+        }
+    </script>
+</body>
+
+</html>

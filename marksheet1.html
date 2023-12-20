@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section>
+        <div class="container">
+            <h2>Marksheet for Information Technology</h2>
+            <table>
+                <tr>
+                    <th>subjects</th>
+                    <th colspan="2">Enter marks</th>
+                </tr>
+                <tr>
+                    <td>C Language:</td>
+                    <td colspan="2"><input type="number" name="" id="cL" min="0" max="100" placeholder="0"></td>
+                </tr>
+                <tr>
+                    <td>C++ Language:</td>
+                    <td colspan="2"><input type="number" name="" id="CL" min="0" max="100" placeholder="0"></td>
+                </tr>
+                <tr>
+                    <td>Database:</td>
+                    <td colspan="2"><input type="number" name="" id="database" min="0" max="100" placeholder="0"></td>
+                </tr>
+                <tr>
+                    <td>html:</td>
+                    <td colspan="2"><input type="number" name="" id="html" min="0" max="100" placeholder="0"></td>
+                </tr>
+                <tr>
+                    <td>css:</td>
+                    <td colspan="2"><input type="number" name="" id="css" min="0" max="100" placeholder="0"></td>
+                </tr>
+                <tr>
+                    <td>php:</td>
+                    <td colspan="2"><input type="number" name="" id="php" min="0" max="100" placeholder="0"></td>
+                </tr>
+                <tr>
+                    <td>Corejava:</td>
+                    <td colspan="2"><input type="number" name="" id="corejava" min="0" max="100" placeholder="0"></td>
+                </tr>
+                <tr></tr>
+                <tr></tr>
+                <tr>
+                    <td></td>
+                    <td colspan="2"><button id="calculate" onclick="calculate ()">result</button></td>
+                </tr>
+            </table>
+            <p id="obt"></p>
+            <p id="showdata"></p>
+        </div>
+    </section>
+    <script>
+        function calculate() {
+    let cL = document.getElementById("cL").value
+    let Cl = document.getElementById("CL").value
+    let database = document.getElementById("database").value
+    let htm = document.getElementById("html").value
+    let css = document.getElementById("css").value
+    let ph = document.getElementById("ph").value
+    let corejava = document.getElementById("corejava").value
+
+    let total = parseFloat(cL) + parseFloat(CL) + parseFloat(database) + parseFloat(html) + parseFloat(css) + parseFloat(ph) + parseFloat(corejava);
+    if (cL > 100 || CL > 100 || database > 100 || html > 100 || css > 100 || ph > 100 || corejava > 100) {
+        alert("enter valid marks")
+    }
+    else {
+        obt.innerHTML = `Total is:${total}/700`;
+    }
+
+    let percentage = parseFloat(total / 700) * 100;
+    showdata.innerHTML = `percentage is: ${percentage}%`;
+}
+    </script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        section {
+            border: 2px solid black;
+            width: 400px;
+            margin: 10px auto;
+        }
+
+        h1 {
+            text-align: center;
+            margin: 20px 0px;
+        }
+
+        form {
+            margin-left: 20px;
+            margin-bottom: 10px;
+        }
+
+        #oparetars {
+            margin-left: 20px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            width: 40px;
+        }
+
+        span {
+            background-color: yellow;
+        }
+
+        p {
+            margin-left: 17rem;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div class="container">
+            <h1>maths operations</h1>
+            <form>
+                <table>
+                    <tr>
+                        <td><label id="number_1">enter 1st number:</label></td>
+                        <td>&nbsp</td>
+                        <td><input type="text" id="number_1"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="number_2">enter 2nd number:</label></td>
+                        <td>&nbsp</td>
+                        <td><input type="text" id="number_2"></td>
+                    </tr>
+                </table>
+            </form>
+            <div id="oparetars">
+                <button id="btn1">+</button>
+                <button id="btn2">-</button>
+                <button id="btn3">*</button>
+                <button id="btn4">/</button>
+                <button id="btn5">%</button>
+            </div>
+            <p class="answer">Answer is: <span id="result"></span></p>
+        </div>
+    </section>
+    <script>
+        let num1 = document.getElementById("number_1")
+        let num2 = document.getElementById("number_2")
+        let result = document.getElementById("result")
+        let btn1 = document.getElementById("btn1")
+        let btn2 = document.getElementById("btn2")
+        let btn3 = document.getElementById("btn3")
+        let btn4 = document.getElementById("btn4")
+        let btn5 = document.getElementById("btn5")
+
+
+        btn1.addEventListener("click", () => {
+            result.innerHTML = parseInt(number_1.value) + parseInt(number_2.value);
+        });
+
+        btn2.addEventListener("click", () => {
+            result.innerHTML = parseInt(number_1.value) - parseInt(number_2.value);
+        });
+        btn3.addEventListener("click", () => {
+            result.innerHTML = parseInt(number_1.value) * parseInt(number_2.value);
+        });
+        btn4.addEventListener("click", () => {
+            result.innerHTML = parseInt(num1.value) / parseInt(num2.value);
+        });
+        btn5.addEventListener("click", () => {
+            result.innerHTML = `${number_1.value / number_2.value * 100}%`;
+        });
+
+    </script>
+
+</body>
+
+</html>
